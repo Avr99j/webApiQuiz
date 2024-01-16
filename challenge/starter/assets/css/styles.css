@@ -91,4 +91,5 @@ li {
   display: block;
   width: 200px;
   background-color: grey;
+  cursor: pointer;
 }
