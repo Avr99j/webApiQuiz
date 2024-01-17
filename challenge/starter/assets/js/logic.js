@@ -9,7 +9,8 @@ const endScreenEl = document.getElementById("end-screen");
 const submitButtonEl = document.getElementById("submit");
 const feedbackEl = document.getElementById("feedback");
 const finalScoreEl = document.getElementById("final-score");
-const initialsEl = document.getAnimations("initials");
+const initialsEl = document.getElementById("initials");
+const submitMessageEl = document.getElementById("submit-message");
 
 // Inititalise variables
 var currentQuestion = 0;
@@ -70,7 +71,7 @@ function setQuestion() {
         var button = document.createElement("button");
         button.textContent = option;
         choicesEl.appendChild(button);
-        button.addEventListener("click", () => choseAnswer());
+        button.addEventListener("click", () => choseAnswer(option));
     });
 }
 
@@ -106,3 +107,31 @@ function choseAnswer(selectedOption) {
     }
 }
 
+function submit() {
+    var initials = initialsEl.value.toUpperCase();
+    var storedResults = localStorage.getItem("score");
+    var oldList;
+    if (storedResults !== null) {
+        oldList = JSON.parse(storedResults);
+    } else {
+        oldList = [];
+    }
+
+    if (initials === "") {
+        submitMessageEl.textContent = "Please enter your initials"
+    } else {
+        submitMessageEl.textContent = "Successfully submitted"
+        oldList.push({
+            initials: initials,
+            score: score,
+        });
+
+        submitButtonEl.disabled = true;
+        setTimeout(function () {
+            window.location.href = "highscores.html";
+        }, 1000);
+    }
+    localStorage.setItem("score", JSON.stringify(oldList));
+}
+
+submitButtonEl.addEventListener("click", submit)
