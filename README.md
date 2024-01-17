@@ -41,4 +41,8 @@ https://avr99j.github.io/webApiQuiz/
    ```bash
    git clone https://github.com/Avr99j/webApiQuiz.git
 
+## License
+
+MIT
+
 
