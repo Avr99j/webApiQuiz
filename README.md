@@ -4,6 +4,7 @@ Welcome to the Javascript Quiz Challenge! This quiz game tests your coding knowl
 
 ## Screenshot
 
+![image](https://github.com/Avr99j/webApiQuiz/assets/71075582/fe0c0fcb-a05e-4f4a-bbad-ae9ee22835f9)
 
 
 ## Table of Contents
