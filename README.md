@@ -30,6 +30,10 @@ Welcome to the Javascript Quiz Challenge! This quiz game tests your coding knowl
 - Ability to submit initials for highscores.
 - View highscores to compare your performance with others.
 
+## Link to the deployed application
+
+https://avr99j.github.io/webApiQuiz/ 
+
 ## Usage
 
 1. Clone the repository:
