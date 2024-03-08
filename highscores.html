@@ -19,7 +19,28 @@
     <button id="clear">Clear Highscores</button>
   </div>
 
-  <script src="./assets/js/scores.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const clearButton = document.getElementById("clear");
+      const highScoreListEl = document.getElementById("highscores");
+
+      // Event listener for the "Clear Highscores" button
+      clearButton.addEventListener("click", function () {
+        localStorage.removeItem("score"); // Remove high scores from local storage
+        highScoreListEl.innerHTML = ""; // Clear the displayed high scores
+      });
+
+      // Retrieve high scores from local storage
+      const highScores = JSON.parse(localStorage.getItem("score")) || [];
+
+      // Display high scores
+      highScores.forEach((score, index) => {
+        const li = document.createElement("li");
+        li.textContent = `${score.initials}: ${score.score}`;
+        highScoreListEl.appendChild(li);
+      });
+    });
+  </script>
 </body>
 
 </html>
